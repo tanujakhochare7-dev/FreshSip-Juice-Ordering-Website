@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FreshSip | Fresh Juice Ordering</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="#home" class="logo">
+                Fresh<span>Sip</span>
+            </a>
+
+            <nav id="navMenu">
+                <a href="#home">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <button class="cart-btn" id="cartBtn">
+                🛒 <span id="cartCount">0</span>
+            </button>
+
+            <button class="menu-btn" id="menuBtn">☰</button>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                FRESH • HEALTHY • NATURAL
+            </p>
+
+            <h1>
+                Fresh Juice,
+                <span>Fresh You.</span>
+            </h1>
+
+            <p>
+                Delicious and refreshing juices made from
+                fresh fruits. Order your favourite juice today.
+            </p>
+
+            <a href="#menu" class="hero-btn">
+                Explore Menu →
+            </a>
+
+        </div>
+
+        <div class="hero-juice">
+            🍹
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+    <section class="features">
+
+        <div class="feature">
+            <div>🍊</div>
+            <h3>Fresh Fruits</h3>
+            <p>Made with fresh quality fruits.</p>
+        </div>
+
+        <div class="feature">
+            <div>⚡</div>
+            <h3>Quick Delivery</h3>
+            <p>Fresh juice delivered quickly.</p>
+        </div>
+
+        <div class="feature">
+            <div>🌱</div>
+            <h3>100% Natural</h3>
+            <p>No artificial flavours.</p>
+        </div>
+
+    </section>
+
+
+    <!-- MENU -->
+    <section class="menu-section" id="menu">
+
+        <div class="section-heading">
+
+            <p class="small-title">OUR MENU</p>
+
+            <h2>Choose Your Favourite Juice</h2>
+
+            <p>
+                Freshly prepared just for you.
+            </p>
+
+        </div>
+
+
+        <!-- SEARCH -->
+        <div class="menu-tools">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search your favourite juice..."
+            >
+
+            <div class="categories">
+
+                <button class="category active" data-category="all">
+                    All
+                </button>
+
+                <button class="category" data-category="Fruit">
+                    Fruit
+                </button>
+
+                <button class="category" data-category="Special">
+                    Special
+                </button>
+
+                <button class="category" data-category="Milkshake">
+                    Milkshake
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCTS -->
+        <div class="products" id="productsContainer">
+
+            <!-- Products added by JavaScript -->
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <div class="about-content">
+
+            <p class="small-title">
+                ABOUT FRESHSIP
+            </p>
+
+            <h2>
+                Healthy Drinks.
+                Happy Life.
+            </h2>
+
+            <p>
+                FreshSip is a static juice ordering website created
+                to provide customers with a simple and attractive
+                online ordering experience.
+            </p>
+
+            <p>
+                Our juices are inspired by fresh fruits, natural
+                ingredients and refreshing flavours.
+            </p>
+
+        </div>
+
+        <div class="about-box">
+
+            <span>🍓</span>
+
+            <h3>Freshness in Every Sip</h3>
+
+            <p>
+                Taste the difference with every glass.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CART SIDEBAR -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <aside class="cart-sidebar" id="cartSidebar">
+
+        <div class="cart-header">
+
+            <h2>Your Cart</h2>
+
+            <button id="closeCart">
+                ×
+            </button>
+
+        </div>
+
+
+        <div id="cartItems" class="cart-items">
+
+            <p class="empty-cart">
+                Your cart is empty.
+            </p>
+
+        </div>
+
+
+        <div class="cart-bottom">
+
+            <div class="total">
+                <span>Total</span>
+                <strong id="cartTotal">
+                    ₹0
+                </strong>
+            </div>
+
+            <button id="checkoutBtn" class="checkout-btn">
+                Proceed to Order
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ORDER MODAL -->
+    <div class="modal" id="orderModal">
+
+        <div class="modal-content">
+
+            <button class="close-modal" id="closeModal">
+                ×
+            </button>
+
+            <h2>Complete Your Order</h2>
+
+            <p class="modal-subtitle">
+                Enter your details to place your order.
+            </p>
+
+
+            <form id="orderForm">
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Full Name"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    placeholder="Phone Number"
+                    required
+                >
+
+                <textarea
+                    id="customerAddress"
+                    placeholder="Delivery Address"
+                    required
+                ></textarea>
+
+                <select id="paymentMethod" required>
+
+                    <option value="">
+                        Select Payment Method
+                    </option>
+
+                    <option value="Cash on Delivery">
+                        Cash on Delivery
+                    </option>
+
+                    <option value="UPI">
+                        UPI
+                    </option>
+
+                </select>
+
+                <button type="submit">
+                    Place Order
+                </button>
+
+            </form>
+
+
+            <p id="orderSuccess"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <div class="section-heading">
+
+            <p class="small-title">
+                GET IN TOUCH
+            </p>
+
+            <h2>Contact FreshSip</h2>
+
+            <p>
+                Have a question? We'd love to hear from you.
+            </p>
+
+        </div>
+
+        <div class="contact-grid">
+
+            <div>
+                📍 Pune, Maharashtra
+            </div>
+
+            <div>
+                📞 +91 98765 43210
+            </div>
+
+            <div>
+                ✉️ hello@freshsip.com
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h2 class="logo">
+            Fresh<span>Sip</span>
+        </h2>
+
+        <p>
+            Fresh juice. Fresh moments.
+        </p>
+
+        <p class="copyright">
+            © 2026 FreshSip. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
